@@ -119,7 +119,7 @@
         const lastNameValue = lastNameElement.value;
         const person = new Person(personIdValue, firstNameValue, lastNameValue);
 
-        // call the create function of the spring boot app with the values
+        // call the update function of the spring boot app with the values
         const personData = JSON.stringify(person);
         console.log(personData);
 
@@ -133,6 +133,37 @@
             },
             url: "/update/" + personIdValue,
             data: personData,
+            dataType: "JSON",
+            success: function(response) {
+                alert(JSON.stringify(response));
+            },
+            error: function(request, status, error) {
+                console.log("Error while digesting request")
+                console.log("Request value ↓")
+                console.log(request)
+                console.log("Status value ↓")
+                console.log(status);
+                console.log("Error value ↓")
+                console.log(error);
+            }
+        });
+    }
+
+    function deleteById(event) {
+        event.preventDefault();
+        // get the values that are in the input fields
+        const personIdElement = document.getElementById("person-id");
+        const personIdValue = personIdElement.value;
+
+        $.ajax({
+            type: "DELETE",
+            crossDomain: true,
+            headers: {
+                'Accept':'application/json',
+                'Content-Type':'application/json',
+                'Access-Control-Allow-Origin': '*'
+            },
+            url: "/delete/" + personIdValue,
             dataType: "JSON",
             success: function(response) {
                 alert(JSON.stringify(response));
