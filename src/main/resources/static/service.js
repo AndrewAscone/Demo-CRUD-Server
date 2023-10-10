@@ -6,6 +6,8 @@
         }
     }
 
+    const updateDisplay = (response) => document.getElementById("output").innerText = JSON.stringify(response);
+
     function create(event) {
         event.preventDefault();
         // get the values that are in the input fields
@@ -34,16 +36,10 @@
             data: personData,
             dataType: "JSON",
             success: function(response) {
-                alert(JSON.stringify(response));
+                updateDisplay(response);
             },
-            error: function(request, status, error) {
-                console.log("Error while digesting request")
-                console.log("Request value ↓")
-                console.log(request)
-                console.log("Status value ↓")
-                console.log(status);
-                console.log("Error value ↓")
-                console.log(error);
+            error: function(error) {
+                updateDisplay(error)
             }
         });
     }
@@ -65,16 +61,10 @@
             url: "/read/" + personIdValue,
             dataType: "JSON",
             success: function(response) {
-                alert(JSON.stringify(response));
+                updateDisplay(response);
             },
-            error: function(request, status, error) {
-                console.log("Error while digesting request")
-                console.log("Request value ↓")
-                console.log(request)
-                console.log("Status value ↓")
-                console.log(status);
-                console.log("Error value ↓")
-                console.log(error);
+            error: function(error) {
+                updateDisplay(error);
             }
         });
     }
@@ -93,16 +83,10 @@
             url: "/readAll",
             dataType: "JSON",
             success: function(response) {
-                alert(JSON.stringify(response));
+                updateDisplay(response);
             },
-            error: function(request, status, error) {
-                console.log("Error while digesting request")
-                console.log("Request value ↓")
-                console.log(request)
-                console.log("Status value ↓")
-                console.log(status);
-                console.log("Error value ↓")
-                console.log(error);
+            error: function(error) {
+                updateDisplay(error);
             }
         });
     }
@@ -135,16 +119,10 @@
             data: personData,
             dataType: "JSON",
             success: function(response) {
-                alert(JSON.stringify(response));
+                updateDisplay(response);
             },
-            error: function(request, status, error) {
-                console.log("Error while digesting request")
-                console.log("Request value ↓")
-                console.log(request)
-                console.log("Status value ↓")
-                console.log(status);
-                console.log("Error value ↓")
-                console.log(error);
+            error: function(error) {
+                updateDisplay(error);
             }
         });
     }
@@ -166,16 +144,10 @@
             url: "/delete/" + personIdValue,
             dataType: "JSON",
             success: function(response) {
-                alert(JSON.stringify(response));
+                updateDisplay(response);
             },
-            error: function(request, status, error) {
-                console.log("Error while digesting request")
-                console.log("Request value ↓")
-                console.log(request)
-                console.log("Status value ↓")
-                console.log(status);
-                console.log("Error value ↓")
-                console.log(error);
+            error: function(error) {
+                updateDisplay(error);
             }
         });
     }
