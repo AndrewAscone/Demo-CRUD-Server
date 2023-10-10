@@ -34,7 +34,6 @@ public class PersonService {
         Person personInDatabase = this.readById(id);
         personInDatabase.setFirstName(newPersonData.getFirstName());
         personInDatabase.setLastName(newPersonData.getLastName());
-        personInDatabase.setBirthDate(newPersonData.getBirthDate());
         personInDatabase = repository.save(personInDatabase);
         return personInDatabase;
     }

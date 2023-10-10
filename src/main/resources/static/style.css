@@ -26,12 +26,14 @@ input {
 button {
     padding: 5px 10px;
     border-radius: 3px;
-    background-color: #4CAF50;
+    background-color: #100ce6;
     color: white;
-    border: none;
+    border: 1px solid black;
     cursor: pointer;
 }
 
 button:hover {
-    background-color: #3e8e41;
+    background-color: #ffffff;
+    color: #100ce6;
+    border: 1px solid #100ce6;
 }
